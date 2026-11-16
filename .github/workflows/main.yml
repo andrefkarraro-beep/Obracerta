@@ -27,7 +27,7 @@ jobs:
           gradle-version: '8.7'
 
       - name: Compilar APK Debug
-        run: gradle assembleDebug --no-daemon
+        run: gradle assembleDebug --no-daemon --stacktrace
 
       - name: Publicar APK para Download
         uses: actions/upload-artifact@v4
