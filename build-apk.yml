@@ -18,6 +18,10 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
+      - name: Limpar completamente o SDK pré-instalado
+        run: |
+          sudo rm -rf /usr/local/lib/android/sdk/cmdline-tools/*
+
       - name: Configurar Android SDK
         uses: android-actions/setup-android@v3
 
