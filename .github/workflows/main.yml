@@ -18,6 +18,10 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
+      - name: Limpar SDK pré-instalado conflitante
+        run: |
+          sudo rm -rf /usr/local/lib/android/sdk/cmdline-tools/latest
+
       - name: Configurar Android SDK
         uses: android-actions/setup-android@v3
 
