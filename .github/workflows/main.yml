@@ -18,15 +18,8 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Limpar SDK pré-instalado conflitante
-        run: |
-          sudo rm -rf /usr/local/lib/android/sdk/cmdline-tools/latest
-
-      - name: Configurar Android SDK
-        uses: android-actions/setup-android@v3
-
       - name: Aceitar licenças Android SDK
-        run: yes | sdkmanager --licenses > /dev/null 2>&1 || true
+        run: yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses > /dev/null 2>&1 || true
 
       - name: Configurar Gradle
         uses: gradle/actions/setup-gradle@v4
